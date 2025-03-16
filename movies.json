@@ -4,7 +4,7 @@
       "movies": [
         {
           "title": "Interstellar",
-          "poster": "https://cdn.glitch.global/61b8f914-36c4-4ac5-b353-73e7912cc60a/soic22.jpg?v=1742126382999",
+          "poster": <img src="https://cdn.glitch.global/61b8f914-36c4-4ac5-b353-73e7912cc60a/soic22.jpg?v=1742126382999">,
           "rating": "8.6",
           "description": "A team of explorers travel through a wormhole in space to save humanity.",
           "downloadLink": "interstellar.mp4"
