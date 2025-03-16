@@ -1,33 +1,33 @@
 [
-  {
-    "category": "Popular",
-    "movies": [
-      {
-        "title": "Interstellar",
-        "poster": "https://cdn.glitch.global/61b8f914-36c4-4ac5-b353-73e7912cc60a/soic22.jpg?v=1742126382999",
-        "rating": "8.6",
-        "description": "A team of explorers travel through a wormhole in space to save humanity.",
-        "downloadLink": "interstellar.mp4"
-      },
-      {
-        "title": "The Revenant",
-        "poster": "https://example.com/wicked-part2.jpg",  // Replace this with the actual image URL
-        "rating": "8.0",
-        "description": "A frontiersman fights for survival after being mauled by a bear.",
-        "downloadLink": "revenant.mp4"
-      }
-    ]
-  },
-  {
-    "category": "Top Rated",
-    "movies": [
-      {
-        "title": "The Dark Knight",
-        "poster": "https://example.com/dark_knight.jpg",  // Replace this with the actual image URL
-        "rating": "9.0",
-        "description": "Batman faces the Joker in this epic crime thriller.",
-        "downloadLink": "dark_knight.mp4"
-      }
-    ]
-  }
-]
+    {
+      "category": "Popular",
+      "movies": [
+        {
+          "title": "Interstellar",
+          "poster": <img src="https://cdn.glitch.global/61b8f914-36c4-4ac5-b353-73e7912cc60a/soic22.jpg?v=1742126382999">,
+          "rating": "8.6",
+          "description": "A team of explorers travel through a wormhole in space to save humanity.",
+          "downloadLink": "interstellar.mp4"
+        },
+        {
+          "title": "The Revenant",
+          "poster": "wicked-part2.jpg",
+          "rating": "8.0",
+          "description": "A frontiersman fights for survival after being mauled by a bear.",
+          "downloadLink": "revenant.mp4"
+        }
+      ]
+    },
+    {
+      "category": "Top Rated",
+      "movies": [
+        {
+          "title": "The Dark Knight",
+          "poster": "dark_knight.jpg",
+          "rating": "9.0",
+          "description": "Batman faces the Joker in this epic crime thriller.",
+          "downloadLink": "dark_knight.mp4"
+        }
+      ]
+    }
+  ]
