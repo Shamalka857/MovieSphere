@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose the Login Type - FlixGo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            text-align: center;
+        }
+
+        .login-container h1 {
+            margin-bottom: 30px;
+        }
+
+        .login-button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
+        }
+
+        .login-button:hover {
+            transform: scale(1.05); /* Slight scale on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        }
+
+        /* Loading animation (optional) */
+        .loading-animation {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #fff;
+            border-top: 5px solid #e50914;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none; /* Initially hidden */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Choose the Login Type</h1>
+        <form action="admin-login.html" method="get">
+            <button class="login-button" type="submit">Admin Login</button>
+        </form>
+        <form action="sign-in.html" method="get">
+            <button class="login-button" type="submit">Premium User Login</button>
+        </form>
+        <div class="loading-animation" id="loading"></div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const buttons = document.querySelectorAll('.login-button');
+        const loading = document.getElementById('loading');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function(){
+                loading.style.display = 'block';
+                setTimeout(() => {
+                    this.parentElement.submit();
+                }, 1000);
+            });
+        });
+    });
+    </script>
+</body>
+</html>
