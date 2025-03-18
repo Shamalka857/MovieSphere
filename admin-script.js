@@ -1,11 +1,12 @@
 // Firebase Config (Replace with yours)
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    const firebaseConfig = {
+    apiKey: "AIzaSyCmBkZF75TXTUKjCoVuJuqcnm24apejusE",
+    authDomain: "moviesphere-e4ccc.firebaseapp.com",
+    projectId: "moviesphere-e4ccc",
+    storageBucket: "moviesphere-e4ccc.firebasestorage.app",
+    messagingSenderId: "498744384429",
+    appId: "1:498744384429:web:ee1b5b950f15c1ff9fdf24"
 };
 
 // Initialize Firebase
