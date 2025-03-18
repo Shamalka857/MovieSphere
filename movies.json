@@ -4,7 +4,7 @@
     "title": "Action Galaxy",
     "year": 2023,
     "rating": 8.5,
-    "poster": "images/action_galaxy_poster.png",
+    "poster": "https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189",
     "categories": ["action", "new-releases", "home"],
     "downloadLink": "https://example.com/action_galaxy_download",
     "quality": "1080p",
