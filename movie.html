@@ -163,10 +163,10 @@
         <div class="logo">FLIXGO</div>
         <nav>
             <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">CATALOG</a></li>
-                <li><a href="#">PRICING PLAN</a></li>
-                <li><a href="#">HELP</a></li>
+                <<li><a href="index.html">HOME</a></li>
+                <li><a href="movies.html">MOVIES</a></li>
+                <li><a href="tv-series.html">TV SERIES</a></li>
+                <li><a href="cartoons.html">CARTOONS</a></li>
                 <li><a href="#">...</a></li>
             </ul>
         </nav>
@@ -203,46 +203,16 @@
         </div>
     </section>
 
-    <section class="new-releases">
+    <section class="new-releases" id="new-releases-section">
         <h2>NEW RELEASES</h2>
         <div class="tabs">
-            <button class="active">NEW RELEASES</button>
-            <button>MOVIES</button>
-            <button>TV SERIES</button>
-            <button>CARTOONS</button>
+            <button class="active" data-category="new-releases">NEW RELEASES</button>
+            <button data-category="movies">MOVIES</button>
+            <button data-category="tv-series">TV SERIES</button>
+            <button data-category="cartoons">CARTOONS</button>
         </div>
-        <div class="release-item">
-            <img src="https://via.placeholder.com/100x150" alt="I Dream in Another Language">
-            <div class="release-content">
-                <h3>I Dream in Another Language</h3>
-                <p class="release-rating">8.4</p>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it.</p>
+        <div id="releases-container">
             </div>
-        </div>
-        <div class="release-item">
-            <img src="https://via.placeholder.com/100x150" alt="Benched">
-            <div class="release-content">
-                <h3>Benched</h3>
-                <p class="release-rating">7.1</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-        </div>
-        <div class="release-item">
-            <img src="https://via.placeholder.com/100x150" alt="Whitney">
-            <div class="release-content">
-                <h3>Whitney</h3>
-                <p class="release-rating">6.3</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-        </div>
-        <div class="release-item">
-            <img src="https://via.placeholder.com/100x150" alt="Blindspotting">
-            <div class="release-content">
-                <h3>Blindspotting</h3>
-                <p class="release-rating">7.9</>
-                </p>
-            </div>
-        </div>
     </section>
 </body>
  <style>
