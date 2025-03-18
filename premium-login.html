@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoviSphere Premium Login</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #222; /* Dark background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Hide scrollbars */
+        }
+
+        .signin-container {
+            background-color: #333; /* Darker container */
+            padding: 40px;
+            border-radius: 8px;
+            width: 300px; /* Adjust width as needed */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .signin-container h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .signin-container input[type="email"],
+        .signin-container input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #444;
+            color: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+        .signin-container input[type="email"]:focus,
+        .signin-container input[type="password"]:focus {
+            border-color: #f44336;
+        }
+
+        .signin-container label {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            margin-bottom: 20px;
+            justify-content: left;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .signin-container label input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .signin-container button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #e50914, #f44336); /* Gradient button */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .signin-container button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .signin-container p {
+            margin-top: 20px;
+            color: #aaa;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .signin-container a {
+            color: #f44336;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .signin-container a:hover {
+            color: #e50914;
+        }
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #333, #222);
+            z-index: -1;
+            animation: bgAnimation 10s linear infinite;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+        <h2>MoviSphere Premium</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <label>
+            <input type="checkbox"> Remember Me
+        </label>
+        <button onclick="signIn()">SIGN IN</button>
+        <p><a href="#">Forgot password?</a></p>
+    </div>
+
+    <script>
+        function signIn() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const premiumUsers = {
+                "premium1@moviesphere.com": "PremiumPass1",
+                "premium2@moviesphere.com": "PremiumPass2",
+                "premium3@moviesphere.com": "PremiumPass3"
+            };
+
+            if (premiumUsers[email] === password) {
+                window.location.href = 'premium-downloads.html'; // Redirect to premium downloads
+            } else {
+                alert('Incorrect email or password.');
+            }
+        }
+    </script>
+</body>
+</html>
