@@ -156,6 +156,40 @@
         .release-rating {
             color: #ffc107;
         }
+        <style>
+    /* ... your existing CSS ... */
+
+    .movie-item {
+        position: relative; /* Needed for absolute positioning of the logo */
+        overflow: hidden; /* Hide the logo when not hovered */
+    }
+
+    .movie-item img {
+        transition: transform 0.3s ease; /* Smooth transition for the poster */
+    }
+
+    .movie-item:hover img {
+        transform: scale(1.1); /* Slightly zoom the poster on hover */
+    }
+
+    .movie-logo-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the logo */
+        width: 60px; /* Adjust size as needed */
+        height: 60px;
+        background-image: url('images/movie-logo.png'); /* Replace with your logo path */
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease;
+    }
+
+    .movie-item:hover .movie-logo-overlay {
+        opacity: 0.8; /* Show the logo on hover */
+    }
+</style>
     </style>
 </head>
 <body>
@@ -181,25 +215,28 @@
         <h2>NEW ITEMS OF THIS SEASON</h2>
         <div class="movie-grid">
             <div class="movie-item">
-                <img src="https://via.placeholder.com/200x300" alt="Blindspotting">
-                <h3>Blindspotting</h3>
-                <p class="movie-rating">7.9</p>
-            </div>
-            <div class="movie-item">
-                <img src="https://via.placeholder.com/200x300" alt="I Dream in Another Language">
-                <h3>I Dream in Another Language</h3>
-                <p class="movie-rating">8.4</p>
-            </div>
-            <div class="movie-item">
-                <img src="https://via.placeholder.com/200x300" alt="Benched">
-                <h3>Benched</h3>
-                <p class="movie-rating">7.1</p>
-            </div>
-            <div class="movie-item">
-                <img src="https://via.placeholder.com/200x300" alt="Whitney">
-                <h3>Whitney</h3>
-                <p class="movie-rating">6.3</p>
-            </div>
+    <img src="https://via.placeholder.com/200x300" alt="Blindspotting">
+    <div class="movie-logo-overlay"></div> <h3>Blindspotting</h3>
+    <p class="movie-rating">7.9</p>
+</div>
+
+<div class="movie-item">
+    <img src="https://via.placeholder.com/200x300" alt="I Dream in Another Language">
+    <div class="movie-logo-overlay"></div> <h3>I Dream in Another Language</h3>
+    <p class="movie-rating">8.4</p>
+</div>
+
+<div class="movie-item">
+    <img src="https://via.placeholder.com/200x300" alt="Benched">
+    <div class="movie-logo-overlay"></div> <h3>Benched</h3>
+    <p class="movie-rating">7.1</p>
+</div>
+
+<div class="movie-item">
+    <img src="https://via.placeholder.com/200x300" alt="Whitney">
+    <div class="movie-logo-overlay"></div> <h3>Whitney</h3>
+    <p class="movie-rating">6.3</p>
+</div>
         </div>
     </section>
 
