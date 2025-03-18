@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoviSphere Premium Movies</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .movie-card {
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .movie-details {
+            padding: 20px;
+        }
+
+        .movie-details h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .movie-details p {
+            margin-bottom: 15px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #e50914, #f44336);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .download-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #333, #222);
+            z-index: -1;
+            animation: bgAnimation 10s linear infinite;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Premium Movies</h1>
+
+    <div class="movie-grid">
+        <div class="movie-card">
+            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
+            <div class="movie-details">
+                <h2>Squid Game 2</h2>
+                <p>Description of Premium Movie 1.</p>
+                <a href="#" class="download-button">Download</a>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="movie2.jpg" alt="Premium Movie 2">
+            <div class="movie-details">
+                <h2>Premium Movie 2</h2>
+                <p>Description of Premium Movie 2.</p>
+                <a href="#" class="download-button">Download</a>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="movie3.jpg" alt="Premium Movie 3">
+            <div class="movie-details">
+                <h2>Premium Movie 3</h2>
+                <p>Description of Premium Movie 3.</p>
+                <a href="#" class="download-button">Download</a>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="movie4.jpg" alt="Premium Movie 4">
+            <div class="movie-details">
+                <h2>Premium Movie 4</h2>
+                <p>Description of Premium Movie 4.</p>
+                <a href="#" class="download-button">Download</a>
+            </div>
+        </div>
+
+        </div>
+
+    <script>
+        // You can add JavaScript for dynamic content loading or interactivity here
+    </script>
+</body>
+</html>
