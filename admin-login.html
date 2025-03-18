@@ -3,69 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - MovieSphere</title>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+    <title>FLIXGO - Movie Download Site</title>
     <style>
         body {
             font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #1a1a1a;
+            color: #fff;
         }
 
-        .login-container {
-            background-color: #fff;
+        header {
+            background-color: #282828;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
 
-        .login-container input[type="email"],
-        .login-container input[type="password"],
-        .login-container button {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
+        nav ul {
+            list-style: none;
+            display: flex;
         }
 
-        .login-container button {
-            background-color: #007bff;
-            color: white;
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 8px;
             border: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .search-container button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
             cursor: pointer;
         }
 
-        .login-container button:hover {
-            background-color: #0056b3;
+        .sign-in-button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .new-items {
+            padding: 20px;
+        }
+
+        .new-items h2 {
+            margin-bottom: 20px;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .movie-item {
+            background-color: #282828;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .movie-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .movie-rating {
+            color: #ffc107;
+        }
+
+        .new-releases {
+            padding: 20px;
+            background-color: #222;
+        }
+
+        .new-releases h2 {
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .tabs button.active {
+            border-bottom: 2px solid #e50914;
+        }
+
+        .release-item {
+            background-color: #282828;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .release-item img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+
+        .release-content {
+            flex-grow: 1;
+        }
+
+        .release-content h3 {
+            margin: 0;
+        }
+
+        .release-rating {
+            color: #ffc107;
         }
     </style>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Admin Login</h2>
-        <form id="login-form">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-    </div>
-    <script src="admin-script.js"></script>
-</body>
-</html>
+    <header>
+        <div class="logo">FLIXGO</div>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">CATALOG</a></li>
+                <li><a href="#">PRICING PLAN</a></li>
+                <li><a href="#">HELP</a></li>
+                <li><a href="#">...</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <button class="sign-in-button">SIGN IN</button>
+    </header>
+
+    <section class="new-items">
+        <h2>NEW ITEMS OF THIS SEASON</h2>
+        <div class="movie-grid">
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300" alt="Blindspotting">
+                <h3>Blindspotting</h3>
+                <p class="movie-rating">7.9</p>
+            </div>
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300" alt="I Dream in Another Language">
+                <h3>I Dream in Another Language</h3>
+                <p class="movie-rating">8.4</p>
+            </div>
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300" alt="Benched">
+                <h3>Benched</h3>
+                <p class="movie-rating">7.1</p>
+            </div>
+            <div class="movie-item">
+                <img src="https://via.placeholder.com/200x300" alt="Whitney">
+                <h3>Whitney</h3>
+                <p class="movie-rating">6.3</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-releases">
+        <h2>NEW RELEASES</h2>
+        <div class="tabs">
+            <button class="active">NEW RELEASES</button>
+            <button>MOVIES</button>
+            <button>TV SERIES</button>
+            <button>CARTOONS</button>
+        </div>
+        <div class="release-item">
+            <img src="https://via.placeholder.com/100x150" alt="I Dream in Another Language">
+            <div class="release-content">
+                <h3>I Dream in Another Language</h3>
+                <p class="release-rating">8.4</p>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it.</p>
+            </div>
+        </div>
+        <div class="release-item">
+            <img src="https://via.placeholder.com/100x150" alt="Benched">
+            <div class="release-content">
+                <h3>Benched</h3>
+                <p class="release-rating">7.1</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+        </div>
+        <div class="release-item">
+            <img src="https://via.placeholder.com/100x150" alt="Whitney">
+            <div class="release-content">
+                <h3>Whitney</h3>
+                <p class="release-rating">6.3</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+        </div>
+        <div class="release-item">
+            <img src="https://via.placeholder.com/100x150" alt="Blindspotting">
+            <div class="release-content">
+                <h3>Blindspotting</h3>
+                <p class="release-rating">7.9</
