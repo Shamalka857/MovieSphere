@@ -1,33 +1,85 @@
 [
-    {
-      "category": "Popular",
-      "movies": [
-        {
-          "title": "Interstellar",
-          "poster": <img src="https://cdn.glitch.global/61b8f914-36c4-4ac5-b353-73e7912cc60a/soic22.jpg?v=1742126382999">,
-          "rating": "8.6",
-          "description": "A team of explorers travel through a wormhole in space to save humanity.",
-          "downloadLink": "interstellar.mp4"
-        },
-        {
-          "title": "The Revenant",
-          "poster": "wicked-part2.jpg",
-          "rating": "8.0",
-          "description": "A frontiersman fights for survival after being mauled by a bear.",
-          "downloadLink": "revenant.mp4"
-        }
-      ]
-    },
-    {
-      "category": "Top Rated",
-      "movies": [
-        {
-          "title": "The Dark Knight",
-          "poster": "dark_knight.jpg",
-          "rating": "9.0",
-          "description": "Batman faces the Joker in this epic crime thriller.",
-          "downloadLink": "dark_knight.mp4"
-        }
-      ]
-    }
-  ]
+  {
+    "id": "movie1",
+    "title": "Action Galaxy",
+    "year": 2023,
+    "rating": 8.5,
+    "poster": "images/action_galaxy_poster.png",
+    "categories": ["action", "new-releases", "home"],
+    "downloadLink": "https://example.com/action_galaxy_download",
+    "quality": "1080p",
+    "description": "In a galaxy far, far away, a lone hero battles an evil empire.",
+    "cast": ["Star Hero", "Villain McBad"],
+    "reviews": [
+      { "user": "User1", "rating": 9, "comment": "Amazing action!" },
+      { "user": "User2", "rating": 8, "comment": "Great visuals." }
+    ],
+    "trailer": "https://example.com/action_galaxy_trailer"
+  },
+  {
+    "id": "movie2",
+    "title": "Comedy Chaos",
+    "year": 2022,
+    "rating": 7.8,
+    "poster": "https://example.com/comedy_chaos_poster.jpg",
+    "categories": ["comedy", "home"],
+    "downloadLink": "https://example.com/comedy_chaos_download",
+    "quality": "720p",
+    "description": "A group of friends gets into hilarious situations.",
+    "cast": ["Funny Guy", "Clumsy Friend"],
+    "reviews": [
+      { "user": "User3", "rating": 8, "comment": "Lots of laughs!" }
+    ],
+    "trailer": "https://example.com/comedy_chaos_trailer"
+  },
+  {
+    "id": "movie3",
+    "title": "Animated Adventures",
+    "year": 2023,
+    "rating": 9.2,
+    "poster": "images/animated_adventures_poster.png",
+    "categories": ["animation", "new-releases", "home"],
+    "downloadLink": "https://example.com/animated_adventures_download",
+    "quality": "4K",
+    "description": "A magical journey through a colorful world.",
+    "cast": ["Voice Actor 1", "Voice Actor 2"],
+    "reviews": [
+      { "user": "User4", "rating": 10, "comment": "Beautifully animated!" },
+      { "user": "User5", "rating": 9, "comment": "Great for kids and adults." }
+    ],
+    "trailer": "https://example.com/animated_adventures_trailer"
+  },
+  {
+    "id": "movie4",
+    "title": "Drama Deep Dive",
+    "year": 2021,
+    "rating": 7.5,
+    "poster": "https://example.com/drama_deep_dive_poster.jpg",
+    "categories": ["drama", "home"],
+    "downloadLink": "https://example.com/drama_deep_dive_download",
+    "quality": "1080p",
+    "description": "An emotional story about overcoming challenges.",
+    "cast": ["Serious Actor", "Emotional Actress"],
+    "reviews": [
+      { "user": "User6", "rating": 7, "comment": "Touching story." }
+    ],
+    "trailer": "https://example.com/drama_deep_dive_trailer"
+  },
+  {
+    "id": "movie5",
+    "title": "Sci-Fi Spectacle",
+    "year": 2023,
+    "rating": 8.8,
+    "poster": "images/sci_fi_spectacle_poster.png",
+    "categories": ["sci-fi", "new-releases", "home"],
+    "downloadLink": "https://example.com/sci_fi_spectacle_download",
+    "quality": "4K",
+    "description": "A mind-bending journey through the cosmos.",
+    "cast": ["Space Explorer", "Alien Entity"],
+    "reviews": [
+      { "user": "User7", "rating": 9, "comment": "Amazing special effects!" },
+      { "user": "User8", "rating": 9, "comment": "Intriguing plot." }
+    ],
+    "trailer": "https://example.com/sci_fi_spectacle_trailer"
+  }
+]
