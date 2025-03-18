@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MovieSphere</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .movie-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .movie-form input[type="text"],
+        .movie-form input[type="number"],
+        .movie-form select,
+        .movie-form input[type="file"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .movie-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .movie-list {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .movie-item button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+</head>
+<body>
+    <div class="movie-form">
+        <h2>Add/Edit Movie</h2>
+        <form id="movie-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="number" id="rating" placeholder="Rating" step="0.1" required>
+            <input type="file" id="poster" accept="image/*" required>
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="movies">Movies</option>
+                <option value="tv-series">TV Series</option>
+                <option value="cartoons">Cartoons</option>
+                <option value="new-releases">New Releases</option>
+                <option value="new-items">New Items</option>
+            </select>
+            <button type="submit">Add Movie</button>
+        </form>
+    </div>
+    <div class="movie-list">
+        <h2>Movie List</h2>
+        <div id="movie-list">
+            </div>
+    </div>
+    <script src="admin-script.js"></script>
+</body>
+</html>
