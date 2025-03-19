@@ -1,1425 +1,254 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>MoviSphere Premium Movies</title>
-
-    <style>
-
-        body {
-
-            font-family: sans-serif;
-
-            margin: 0;
-
-            background-color: #222;
-
-            color: #fff;
-
-            padding: 20px;
-
-            overflow-x: hidden;
-
-        }
-
-
-
-        h1 {
-
-            text-align: center;
-
-            margin-bottom: 30px;
-
-            animation: fadeInDown 1s ease-out;
-
-        }
-
-
-
-        @keyframes fadeInDown {
-
-            from { opacity: 0; transform: translateY(-50px); }
-
-            to { opacity: 1; transform: translateY(0); }
-
-        }
-
-
-
-        .movie-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-            gap: 20px;
-
-            animation: fadeInUp 1s ease-out;
-
-        }
-
-
-
-        @keyframes fadeInUp {
-
-            from { opacity: 0; transform: translateY(50px); }
-
-            to { opacity: 1; transform: translateY(0); }
-
-        }
-
-
-
-        .movie-card {
-
-            background-color: #333;
-
-            border-radius: 8px;
-
-            overflow: hidden;
-
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        }
-
-
-
-        .movie-card:hover {
-
-            transform: translateY(-5px);
-
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
-
-        }
-
-
-
-        .movie-card img {
-
-            width: 100%;
-
-            height: auto;
-
-            display: block;
-
-        }
-
-
-
-        .movie-details {
-
-            padding: 20px;
-
-        }
-
-
-
-        .movie-details h2 {
-
-            margin-top: 0;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .movie-details p {
-
-            margin-bottom: 15px;
-
-        }
-
-
-
-        .download-button {
-
-            display: inline-block;
-
-            padding: 10px 20px;
-
-            background: linear-gradient(to right, #e50914, #f44336);
-
-            color: #fff;
-
-            text-decoration: none;
-
-            border-radius: 4px;
-
-            font-weight: bold;
-
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-        }
-
-
-
-        .download-button:hover {
-
-            transform: scale(1.05);
-
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-
-        }
-
-
-
-        /* Background Animation */
-
-        body::before {
-
-            content: '';
-
-            position: fixed;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            background: linear-gradient(135deg, #333, #222);
-
-            z-index: -1;
-
-            animation: bgAnimation 10s linear infinite;
-
-        }
-
-
-
-        @keyframes bgAnimation {
-
-            0% { background-position: 0% 50%; }
-
-            50% { background-position: 100% 50%; }
-
-            100% { background-position: 0% 50%; }
-
-        }
-
-        <style>
-
-        body {
-
-            font-family: sans-serif;
-
-            margin: 0;
-
-            background-color: #1a1a1a;
-
-            color: #fff;
-
-        }
-
-
-
-        .expected-premiere {
-
-            padding: 20px;
-
-        }
-
-
-
-        .expected-premiere h2 {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .movie-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-
-            gap: 20px;
-
-        }
-
-
-
-        .movie-item {
-
-            background-color: #282828;
-
-            padding: 15px;
-
-            border-radius: 8px;
-
-            text-align: center;
-
-        }
-
-
-
-        .movie-item img {
-
-            max-width: 100%;
-
-            height: auto;
-
-            border-radius: 4px;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .movie-rating {
-
-            color: #ffc107;
-
-        }
-
-
-
-        .show-more-button {
-
-            background-color: #e50914;
-
-            color: #fff;
-
-            border: none;
-
-            padding: 10px 20px;
-
-            border-radius: 4px;
-
-            cursor: pointer;
-
-            display: block;
-
-            margin: 20px auto;
-
-        }
-
-
-
-        .our-partners {
-
-            padding: 20px;
-
-            background-color: #222;
-
-            text-align: center;
-
-        }
-
-
-
-        .our-partners h2 {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        partner-icons img {
-
-    width: 100%; /* Make images responsive */
-
-    max-width: 80px; /* Limit maximum width */
-
-    height: auto; /* Maintain aspect ratio */
-
-    margin: 10px;
-
-        }
-
-
-
-        footer {
-
-            background-color: #1a1a1a;
-
-            padding: 20px;
-
-        }
-
-
-
-        .footer-content {
-
-            display: flex;
-
-            justify-content: space-around;
-
-            flex-wrap: wrap;
-
-        }
-
-
-
-        .footer-section {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .footer-section h3 {
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .footer-section ul {
-
-            list-style: none;
-
-            padding: 0;
-
-        }
-
-
-
-        .footer-section ul li a {
-
-            color: #fff;
-
-            text-decoration: none;
-
-        }
-
-
-
-        .footer-bottom {
-
-            text-align: center;
-
-            margin-top: 20px;
-
-            border-top: 1px solid #333;
-
-            padding-top: 10px;
-
-        }
-
-    </style>
-
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoviSphere Premium Movies</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .movie-card {
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .movie-details {
+            padding: 20px;
+        }
+
+        .movie-details h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .movie-details p {
+            margin-bottom: 15px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #e50914, #f44336);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .download-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #333, #222);
+            z-index: -1;
+            animation: bgAnimation 10s linear infinite;
+        }
+
+        @keyframes bgAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+
+        .our-partners {
+            padding: 20px;
+            background-color: #222;
+            text-align: center;
+        }
+
+        .our-partners h2 {
+            margin-bottom: 20px;
+        }
+
+        .partner-icons img {
+            max-width: 80px;
+            height: auto;
+            margin: 10px;
+        }
+    </style>
 </head>
-
 <body>
-
-    <h1>Premium Movies</h1>
-
-
-
-    <div class="movie-grid">
-
-        <div class="movie-card">
-
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
-
-            <div class="movie-details">
-
-                <h2>Squid Game 2</h2>
-
-                <p>Description of Premium Movie 1.</p>
-
-                <a href="squid-game-2.html" class="download-button">Download</a>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="movie-card">
-
-            <img src="movie2.jpg" alt="Premium Movie 2">
-
-            <div class="movie-details">
-
-                <h2>Premium Movie 2</h2>
-
-                <p>Description of Premium Movie 2.</p>
-
-                <a href="#" class="download-button">Download</a>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="movie-card">
-
-            <img src="movie3.jpg" alt="Premium Movie 3">
-
-            <div class="movie-details">
-
-                <h2>Premium Movie 3</h2>
-
-                <p>Description of Premium Movie 3.</p>
-
-                <a href="#" class="download-button">Download</a>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="movie-card">
-
-            <img src="movie4.jpg" alt="Premium Movie 4">
-
-            <div class="movie-details">
-
-                <h2>Premium Movie 4</h2>
-
-                <p>Description of Premium Movie 4.</p>
-
-                <a href="#" class="download-button">Download</a>
-
-            </div>
-
-        </div>
-
-
-
-        </div>
-
-    <style>
-
-        body {
-
-            font-family: sans-serif;
-
-            margin: 0;
-
-            background-color: #1a1a1a;
-
-            color: #fff;
-
-        }
-
-
-
-        .expected-premiere {
-
-            padding: 20px;
-
-        }
-
-
-
-        .expected-premiere h2 {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .movie-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-
-            gap: 20px;
-
-        }
-
-
-
-        .movie-item {
-
-            background-color: #282828;
-
-            padding: 15px;
-
-            border-radius: 8px;
-
-            text-align: center;
-
-        }
-
-
-
-        .movie-item img {
-
-            max-width: 100%;
-
-            height: auto;
-
-            border-radius: 4px;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .movie-rating {
-
-            color: #ffc107;
-
-        }
-
-
-
-        .show-more-button {
-
-            background-color: #e50914;
-
-            color: #fff;
-
-            border: none;
-
-            padding: 10px 20px;
-
-            border-radius: 4px;
-
-            cursor: pointer;
-
-            display: block;
-
-            margin: 20px auto;
-
-        }
-
-
-
-        .our-partners {
-
-            padding: 20px;
-
-            background-color: #222;
-
-            text-align: center;
-
-        }
-
-
-
-        .our-partners h2 {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .partner-icons img {
-
-            max-width: 80px;
-
-            margin: 10px;
-
-        }
-
-
-
-        footer {
-
-            background-color: #1a1a1a;
-
-            padding: 20px;
-
-        }
-
-
-
-        .footer-content {
-
-            display: flex;
-
-            justify-content: space-around;
-
-            flex-wrap: wrap;
-
-        }
-
-
-
-        .footer-section {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .footer-section h3 {
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .footer-section ul {
-
-            list-style: none;
-
-            padding: 0;
-
-        }
-
-
-
-        .footer-section ul li a {
-
-            color: #fff;
-
-            text-decoration: none;
-
-        }
-
-
-
-        .footer-bottom {
-
-            text-align: center;
-
-            margin-top: 20px;
-
-            border-top: 1px solid #333;
-
-            padding-top: 10px;
-
-        }
-
-    body {
-
-            font-family: sans-serif;
-
-            margin: 0;
-
-            background-color: #1a1a1a;
-
-            color: #fff;
-
-        }
-
-
-
-        header {
-
-            background-color: #282828;
-
-            padding: 20px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-        }
-
-
-
-        .logo {
-
-            font-size: 24px;
-
-            font-weight: bold;
-
-        }
-
-
-
-        nav ul {
-
-            list-style: none;
-
-            display: flex;
-
-        }
-
-
-
-        nav ul li {
-
-            margin-left: 20px;
-
-        }
-
-
-
-        nav ul li a {
-
-            color: #fff;
-
-            text-decoration: none;
-
-        }
-
-
-
-        .search-container {
-
-            display: flex;
-
-            align-items: center;
-
-        }
-
-
-
-        .search-container input[type="text"] {
-
-            padding: 8px;
-
-            border: none;
-
-            border-radius: 4px;
-
-            margin-right: 10px;
-
-            background-color: #333;
-
-            color: #fff;
-
-        }
-
-
-
-        .search-container button {
-
-            background-color: #e50914;
-
-            color: #fff;
-
-            border: none;
-
-            padding: 8px 15px;
-
-            border-radius: 4px;
-
-            cursor: pointer;
-
-        }
-
-
-
-        .sign-in-button {
-
-            background-color: #e50914;
-
-            color: #fff;
-
-            border: none;
-
-            padding: 8px 15px;
-
-            border-radius: 4px;
-
-            cursor: pointer;
-
-        }
-
-
-
-        .new-items {
-
-            padding: 20px;
-
-        }
-
-
-
-        .new-items h2 {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .movie-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-            gap: 20px;
-
-        }
-
-
-
-        .movie-item {
-
-            background-color: #282828;
-
-            padding: 15px;
-
-            border-radius: 8px;
-
-            text-align: center;
-
-        }
-
-
-
-        .movie-item img {
-
-            max-width: 100%;
-
-            height: auto;
-
-            border-radius: 4px;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .movie-rating {
-
-            color: #ffc107;
-
-        }
-
-
-
-        .new-releases {
-
-            padding: 20px;
-
-            background-color: #222;
-
-        }
-
-
-
-        .new-releases h2 {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .tabs {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .tabs button {
-
-            background-color: transparent;
-
-            color: #fff;
-
-            border: none;
-
-            padding: 8px 15px;
-
-            margin-right: 10px;
-
-            cursor: pointer;
-
-        }
-
-
-
-        .tabs button.active {
-
-            border-bottom: 2px solid #e50914;
-
-        }
-
-
-
-        .release-item {
-
-            background-color: #282828;
-
-            padding: 15px;
-
-            border-radius: 8px;
-
-            margin-bottom: 20px;
-
-            display: flex;
-
-            align-items: center;
-
-        }
-
-
-
-        .release-item img {
-
-            max-width: 100px;
-
-            height: auto;
-
-            border-radius: 4px;
-
-            margin-right: 15px;
-
-        }
-
-
-
-        .release-content {
-
-            flex-grow: 1;
-
-        }
-
-
-
-        .release-content h3 {
-
-            margin: 0;
-
-        }
-
-
-
-        .release-rating {
-
-            color: #ffc107;
-
-        }
-
-
-
-        .movie-item {
-
-            position: relative;
-
-            overflow: hidden;
-
-        }
-
-
-
-        .movie-item img {
-
-            transition: transform 0.3s ease;
-
-        }
-
-
-
-        .movie-item:hover img {
-
-            transform: scale(1.1);
-
-        }
-
-
-
-        .movie-logo-overlay {
-
-            position: absolute;
-
-            top: 50%;
-
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-
-            width: 60px;
-
-            height: 60px;
-
-            background-image: url('images/movie-logo.png');
-
-            background-size: contain;
-
-            background-repeat: no-repeat;
-
-            opacity: 0;
-
-            transition: opacity 0.3s ease;
-
-        }
-
-
-
-        .movie-item:hover .movie-logo-overlay {
-
-            opacity: 0.8;
-
-        }
-
-
-
-        .expected-premiere {
-
-            padding: 20px;
-
-        }
-
-
-
-        .expected-premiere h2 {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .expected-premiere .movie-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-
-            gap: 20px;
-
-        }
-
-
-
-        .expected-premiere .movie-item {
-
-            background-color: #282828;
-
-            padding: 15px;
-
-            border-radius: 8px;
-
-            text-align: center;
-
-        }
-
-
-
-        .expected-premiere .movie-item img {
-
-            max-width: 100%;
-
-            height: auto;
-
-            border-radius: 4px;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .expected-premiere .movie-rating {
-
-            color: #ffc107;
-
-        }
-
-
-
-        .show-more-button {
-
-            background-color: #e50914;
-
-            color: #fff;
-
-            border: none;
-
-            padding: 10px 20px;
-
-            border-radius: 4px;
-
-            cursor: pointer;
-
-            display: block;
-
-            margin: 20px auto;
-
-        }
-
-
-
-        .our-partners {
-
-            padding: 20px;
-
-            background-color: #222;
-
-            text-align: center;
-
-        }
-
-
-
-        .our-partners h2 {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .partner-icons img {
-
-            max-width: 30px;
-
-            margin: 10px;
-
-        }
-
-
-
-        footer {
-
-            background-color: #1a1a1a;
-
-            padding: 20px;
-
-        }
-
-
-
-        .footer-content {
-
-            display: flex;
-
-            justify-content: space-around;
-
-            flex-wrap: wrap;
-
-        }
-
-
-
-        .footer-section {
-
-            margin-bottom: 20px;
-
-        }
-
-
-
-        .footer-section h3 {
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .footer-section ul {
-
-            list-style: none;
-
-            padding: 0;
-
-        }
-
-
-
-        .footer-section ul li a {
-
-            color: #fff;
-
-            text-decoration: none;
-
-        }
-
-
-
-        .footer-bottom {
-
-            text-align: center;
-
-            margin-top: 20px;
-
-            border-top: 1px solid #333;
-
-            padding-top: 10px;
-
-        }
-
-        .small-icon {
-
-    width: 50px; /* Adjust as needed */
-
-    height: auto; /* Maintain aspect ratio */
-
-}
-
-        .social-icon {
-
-    width: 40px; /* Adjust the size as needed */
-
-    height: 40px; /* Adjust the size as needed */
-
-    vertical-align: middle; /* Align icons vertically with text */
-
-    margin-right: 5px; /* Add some spacing between icons */
-
-}
-
-    </style>
-
-    <section class="our-partners">
-
-        <h2>Our Partners</h2>
-
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
-
-        <div class="partner-icons">
-
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/35d12736-6dad-4d1a-953e-c3a9281bdc5f.image.png?v=1742295540775" alt="Baiscope">
-
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/a776e028-a84f-4c64-80b9-ded1de1aaa5b.image.png?v=1742295689186" alt="Cinesubz">
-
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/88b29c67-3688-4b2c-86eb-0978d2e933f7.image.png?v=1742295823704" alt="Ytsmx">
-
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/29c61d6a-3815-4729-aca8-39bcae022894.image.png?v=1742295958999" alt="Nkiri.com">
-
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/66c1de3c-77cf-457f-b026-b862b1a35c88.image.png?v=1742296135123" alt="Disney">
-
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/0a6a7ab7-8580-428c-b3c3-3647aa53e3cd.image.png?v=1742296184045" alt="Sony">
-
-        </div>
-
-    </section>
-
-
-
-    <footer>
-
-        <div class="footer-content">
-
-            <div class="footer-section">
-
-                <h3>Visit Our Other Movie Sites</h3>
-
-                <ul>
-
-                    <li>
-
-    <a href="#">
-
-        <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Picture3.png?v=1742296350429" alt="Download Movies For Free" class="small-icon">
-
-        <span>  Download Movies For Free</span>
-
-    </a>
-
-</li>
-
-<li>
-
-    <a href="#">
-
-        <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.png?v=1742296499324" alt="Visit & Subscribe" class="small-icon">
-
-        <span>  Visit & Subscribe</span>
-
-    </a>
-
-</li>
-
-                </ul>
-
-            </div>
-
-            <div class="footer-section">
-
-                <h3>Resources</h3>
-
-                <ul>
-
-                    <li><a href="#">About Us</a></li>
-
-                    <li><a href="#">Pricing Plan</a></li>
-
-                    <li><a href="#">Help</a></li>
-
-                </ul>
-
-            </div>
-
-            <div class="footer-section">
-
-                <h3>Legal</h3>
-
-                <ul>
-
-                    <li><a href="#">Terms of Use</a></li>
-
-                    <li><a href="#">Privacy Policy</a></li>
-
-                    <li><a href="#">Security</a></li>
-
-                </ul>
-
-            </div>
-
-            <div class="footer-section">
-
-                <h3>Contact</h3>
-
-                <ul>
-
-    <li><a href="#">+94 77 863 8789</a></li>
-
-    <li><a href="#">support@movisphere.com</a></li>
-
-                    <br>
-
-    <li>
-
-        <a href="#"><img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/face?v=1742299995774" alt="Facebook" class="social-icon"></a>
-
-        <a href="#"><img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/twitter?v=1742300133038" alt="Twitter" class="social-icon"></a>
-
-        <a href="#"><img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/ista?v=1742300266096" alt="Instagram" class="social-icon"></a>
-
-    </li>
-
-</ul>
-
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-
-            <p>&copy; 2023 MovieSphere. All rights reserved. Developed by Shamalka Subbasinghe.</p>
-
-        </div>
-
-    </footer>
-
-</html>
-
-
-
-    <script>
-
-        // You can add JavaScript for dynamic content loading or interactivity here
-
-    </script>
-
+    <h1>Premium Movies</h1>
+
+    <div class="movie-grid">
+        <div class="movie-card">
+            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
+            <div class="movie-details">
+                <h2>Squid Game 2</h2>
+                <p>Description of Premium Movie 1.</p>
+                <a href="squid-game-2.html" class="download-button">Download</a>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="movie2.jpg" alt="Premium Movie 2">
+            <div class="movie-details">
+                <h2>Premium Movie 2</h2>
+                <p>Description of Premium Movie 2.</p>
+                <a href="#" class="download-button">Download</a>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="movie3.jpg" alt="Premium Movie 3">
+            <div class="movie-details">
+                <h2>Premium Movie 3</h2>
+                <p>Description of Premium Movie 3.</p>
+                <a href="#" class="download-button">Download</a>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="movie4.jpg" alt="Premium Movie 4">
+            <div class="movie-details">
+                <h2>Premium Movie 4</h2>
+                <p>Description of Premium Movie 4.</p>
+                <a href="#" class="download-button">Download</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="our-partners">
+        <h2>Our Partners</h2>
+        <p>We collaborate with leading companies in the entertainment industry.</p>
+        <div class="partner-icons">
+            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/35d12736-6dad-4d1a-953e-c3a9281bdc5f.image.png?v=1742295540775" alt="Baiscope">
+            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/a776e028-a84f-4c64-80b9-ded1de1aaa5b.image.png?v=1742295689186" alt="Partner 2">
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MoviSphere. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
-
 </html>
