@@ -27,8 +27,8 @@
 
         .movie-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted minmax for smaller cards */
+            gap: 15px; /* Adjusted gap for smaller cards */
             animation: fadeInUp 1s ease-out;
         }
 
@@ -57,26 +57,29 @@
         }
 
         .movie-details {
-            padding: 20px;
+            padding: 10px; /* Reduced padding for smaller cards */
         }
 
         .movie-details h2 {
-            margin-top: 0;
-            margin-bottom: 10px;
+            margin-top: 5px; /* Reduced margin for smaller cards */
+            margin-bottom: 5px; /* Reduced margin for smaller cards */
+            font-size: 1em; /* Reduced font size for smaller cards */
         }
 
         .movie-details p {
-            margin-bottom: 15px;
+            margin-bottom: 10px; /* Reduced margin for smaller cards */
+            font-size: 0.8em; /* Reduced font size for smaller cards */
         }
 
         .download-button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 8px 15px; /* Reduced padding for smaller cards */
             background: linear-gradient(to right, #e50914, #f44336);
             color: #fff;
             text-decoration: none;
             border-radius: 4px;
             font-weight: bold;
+            font-size: 0.8em; /* Reduced font size for smaller cards */
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -103,111 +106,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        .expected-premiere {
-            padding: 20px;
-        }
-
-        .expected-premiere h2 {
-            margin-bottom: 20px;
-        }
-
-        .expected-premiere .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-        }
-
-        .expected-premiere .movie-item {
-            background-color: #282828;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .expected-premiere .movie-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-
-        .expected-premiere .movie-rating {
-            color: #ffc107;
-        }
-
-        .show-more-button {
-            background-color: #e50914;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            display: block;
-            margin: 20px auto;
-        }
-
-        .our-partners {
-            padding: 20px;
-            background-color: #222;
-            text-align: center;
-        }
-
-        .our-partners h2 {
-            margin-bottom: 20px;
-        }
-
-        .partner-icons img {
-            max-width: 80px;
-            margin: 10px;
-        }
-
-        footer {
-            background-color: #1a1a1a;
-            padding: 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .footer-section {
-            margin-bottom: 20px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-section ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 20px;
-            border-top: 1px solid #333;
-            padding-top: 10px;
-        }
-
-        .small-icon {
-            width: 50px;
-            height: auto;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            vertical-align: middle;
-            margin-right: 5px;
-        }
+        /* ... rest of your styles ... */
 
         #welcome-message {
             position: fixed;
@@ -232,7 +131,7 @@
 
         @media (max-width: 768px) {
             .movie-grid {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Further adjustment for smaller screens */
             }
         }
     </style>
@@ -247,51 +146,40 @@
 
     <div class="movie-grid">
         <div class="movie-card">
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
+            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Squid Game 2">
             <div class="movie-details">
                 <h2>Squid Game 2</h2>
-                <p>Description of Premium Movie 1.</p>
+                <p>Description.</p>
                 <a href="squid-game-2.html" class="download-button">Download</a>
             </div>
-            <div class="movie-card">
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
+        </div>
+        <div class="movie-card">
+            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Squid Game 2">
             <div class="movie-details">
                 <h2>Squid Game 2</h2>
-                <p>Description of Premium Movie 1.</p>
+                <p>Description.</p>
                 <a href="squid-game-2.html" class="download-button">Download</a>
             </div>
-                <div class="movie-card">
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
+        </div>
+        <div class="movie-card">
+            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Squid Game 2">
             <div class="movie-details">
                 <h2>Squid Game 2</h2>
-                <p>Description of Premium Movie 1.</p>
+                <p>Description.</p>
                 <a href="squid-game-2.html" class="download-button">Download</a>
             </div>
-                    <div class="movie-card">
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
+        </div>
+        <div class="movie-card">
+            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Squid Game 2">
             <div class="movie-details">
                 <h2>Squid Game 2</h2>
-                <p>Description of Premium Movie 1.</p>
+                <p>Description.</p>
                 <a href="squid-game-2.html" class="download-button">Download</a>
             </div>
-                        <div class="movie-card">
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
+        </div>
+        <div class="movie-card">
+            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Squid Game 2">
             <div class="movie-details">
                 <h2>Squid Game 2</h2>
-                <p>Description of Premium Movie 1.</p>
-                <a href="squid-game-2.html" class="download-button">Download</a>
-            </div>
-                            <div class="movie-card">
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
-            <div class="movie-details">
-                <h2>Squid Game 2</h2>
-                <p>Description of Premium Movie 1.</p>
-                <a href="squid-game-2.html" class="download-button">Download</a>
-            </div>
-                                <div class="movie-card">
-            <img src="https://cdn.glitch.global/6f417b81-1161-493f-9c9f-975db7fe2591/Squid3.jpg?v=1742294720189" alt="Premium Movie 1">
-            <div class="movie-details">
-                <h2>Squid Game 2</h2>
-                <p>Description of Premium Movie 1.</p>
-                <a href="squid-game-2.html" class="download-button">Download</a>
-            </div>
+                <p>Description.</p>
+                <a href="squid-game-2.html"
