@@ -21,14 +21,8 @@
         }
 
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .movie-grid {
@@ -39,14 +33,8 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .movie-card {
@@ -111,69 +99,71 @@
         }
 
         @keyframes bgAnimation {
-            0% {
-                background-position: 0% 50%;
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
             }
-            50% {
-                background-position: 100% 50%;
+
+            h1 {
+                font-size: 24px;
             }
-            100% {
-                background-position: 0% 50%;
+
+            .movie-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+            .movie-card {
+                margin-bottom: 20px;
+            }
+
+            .movie-details h2 {
+                font-size: 18px;
+            }
+
+            .movie-details p {
+                font-size: 14px;
+            }
+
+            .download-button {
+                font-size: 14px;
+                padding: 8px 15px;
             }
         }
 
-        /* Footer Styles */
-        footer {
-            background-color: #1a1a1a;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
+        /* For extra small screens (mobile phones) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
+            .movie-card {
+                margin-bottom: 15px;
+            }
 
-        .footer-section {
-            margin-bottom: 20px;
-        }
+            .movie-details h2 {
+                font-size: 16px;
+            }
 
-        .footer-section h3 {
-            margin-bottom: 10px;
-        }
+            .movie-details p {
+                font-size: 12px;
+            }
 
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
+            .download-button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
 
-        .footer-section ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .footer-bottom {
-            margin-top: 20px;
-            border-top: 1px solid #333;
-            padding-top: 10px;
-        }
-
-        .our-partners {
-            padding: 20px;
-            background-color: #222;
-            text-align: center;
-        }
-
-        .our-partners h2 {
-            margin-bottom: 20px;
-        }
-
-        .partner-icons img {
-            max-width: 80px;
-            height: auto;
-            margin: 10px;
+            .movie-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -217,8 +207,7 @@
             </div>
         </div>
     </div>
-
-    <section class="our-partners">
+ <section class="our-partners">
         <h2>Our Partners</h2>
         <p>We collaborate with leading companies in the entertainment industry.</p>
         <div class="partner-icons">
@@ -250,5 +239,9 @@
             <p>&copy; 2025 MoviSphere. All rights reserved.</p>
         </div>
     </footer>
+    <!-- Our Partners section and footer remain the same, adjust as needed -->
 </body>
 </html>
+
+   
+  
